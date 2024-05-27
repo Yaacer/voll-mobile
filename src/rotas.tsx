@@ -9,19 +9,13 @@ import Tabs from "./Tabs";
 export default function Rotas() {
     const Tab = createNativeStackNavigator();
 
-    return(
+    return (
         <NavigationContainer>
             <Tab.Navigator>
-                <Tab.Screen
-                    name="Login" component={Login} options={{headerShown: false}}
-                />
-                <Tab.Screen
-                    name="Cadastro" component={Cadastro} options={{headerShown: false}}
-                />
-                <Tab.Screen
-                    name="Tabs" component={Tabs} options={{headerShown: false}}
-                />
+                <Tab.Screen name="Login" component={Login} options={{ headerShown: false }} />
+                <Tab.Screen name="Cadastro" component={Cadastro} options={{ headerShown: false }} />
+                <Tab.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
             </Tab.Navigator>
         </NavigationContainer>
-    )
+    );
 }

@@ -5,11 +5,10 @@ interface TituloProps extends ITextProps {
     children: ReactNode
 }
 
-export function Titulo({children, ...rest}: TituloProps) {
+export function Titulo({ children, ...rest }: TituloProps) {
     return (
-        <Text fontSize={'3xl'} fontWeight={'bold'} color={"gray.500"} mt={5} {...rest}>
+        <Text fontSize={'2xl'} fontWeight={'bold'} color={'gray.500'} mt={5} {...rest}>
             {children}
         </Text>
-    )
-
+    );
 }

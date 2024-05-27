@@ -1,17 +1,16 @@
-import { extendTheme } from 'native-base';
+import { extendTheme } from "native-base";
 
 export const Temas = extendTheme({
-
     colors: {
         gray: {
-            300: '#808d99'
+            300: '#8D8D99'
         },
         blue: {
-            500: '#339cFF',
+            500: '#339CFF',
             800: '#0B3B60'
         },
-        white: '#fff',
-        black: '#000',
+        white: '#FFF',
+        black: '#000'
     },
     fontSizes: {
         xs: 12,
