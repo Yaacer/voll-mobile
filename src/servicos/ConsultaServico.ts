@@ -7,9 +7,8 @@ export async function agendarConsulta(data: Date, especialistaId: string, pacien
             paciente: pacienteId,
             data: data
         })
-        return resultado.data
-    }
-    catch(error) {
+        return resultado.data;
+    } catch (error) {
         console.log(error);
         return null;
     }

@@ -24,14 +24,14 @@ export default function Cadastro({ navigation }: any) {
         cadastrar()
       }
     }
-   else {
-    toast.show({
-      title: 'Erro ao cadastrar',
-      description: 'Verifique os dados e tente novamente',
-      backgroundColor: 'red.500',
-    });
+    else {
+      toast.show({
+        title: 'Erro ao cadastrar',
+        description: 'Verifique os dados e tente novamente',
+        backgroundColor: 'red.500',
+      });
+    }
   }
-}
   function voltarSecao() {
     if (numSecao > 0) {
       setNumSecao(numSecao - 1)
@@ -71,22 +71,23 @@ export default function Cadastro({ navigation }: any) {
       imagem: dados.imagem
     })
 
-    if ((resultado) !== '' && planos.length > 0) {
+    if (resultado !== '' && planos.length > 0) {
       toast.show({
         title: 'Cadastro realizado com sucesso',
         description: 'Você já pode fazer login',
         backgroundColor: 'green.500',
       })
       navigation.replace('Login');
-    }
-    else {
+    } else {
       toast.show({
         title: 'Erro ao cadastrar',
         description: 'Verifique os dados e tente novamente',
         backgroundColor: 'red.500',
       })
+      console.log('Erro ao cadastrar');
     }
   }
+
   return (
     <ScrollView flex={1} p={5}>
       <Image source={Logo} alt="Logo Voll" alignSelf="center" />

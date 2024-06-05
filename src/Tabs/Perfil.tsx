@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Paciente } from '../interfaces/Paciente';
 import { Botao } from '../componentes/Botao';
 
-export default function Perfil({navigation}) {
+export default function Perfil({ navigation }) {
   const [dadosPaciente, setDadosPaciente] = useState({} as Paciente);
 
   useEffect(() => {
@@ -24,9 +24,9 @@ export default function Perfil({navigation}) {
   })
 
   function deslogar() {
-    AsyncStorage.removeItem('token')
-    AsyncStorage.removeItem('pacienteId')
-    navigation.replace('Login')
+    AsyncStorage.removeItem('token');
+    AsyncStorage.removeItem('pacienteId');
+    navigation.replace('Login');
   }
 
   return (
@@ -34,18 +34,18 @@ export default function Perfil({navigation}) {
       <VStack flex={1} alignItems="center" p={5}>
         <Titulo color="blue.500">Meu Perfil</Titulo>
 
-        <Avatar size="xl" source={{ uri: "https://github.com/robertoSRMJunior.png" }} mt={5} />
+        <Avatar size="xl" source={{ uri: dadosPaciente?.imagem }} mt={5} />
 
         <Titulo color="blue.500">Informações pessoais</Titulo>
         <Titulo fontSize="lg" mb={1}>{dadosPaciente.nome}</Titulo>
-        <Text>{dadosPaciente.email}</Text>
-        <Text>{dadosPaciente?.endereco?.estado}</Text>
+        <Text>Email: {dadosPaciente?.email}</Text>
+        <Text>Estado: {dadosPaciente?.endereco?.estado}</Text>
 
         <Divider mt={5} />
 
-        <Titulo color="blue.500" mb={1}>Planos de saúde</Titulo>
+        <Titulo color="blue.500" mb={1}>Planos de Saúde</Titulo>
         {
-          dadosPaciente.planosSaude?.map((plano, index) => (
+          dadosPaciente?.planosSaude?.map((plano, index) => (
             <Text key={index}>{plano}</Text>
           ))
         }
